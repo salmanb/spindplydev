@@ -6,8 +6,8 @@ pipeline {
     stage("first") {
       steps {
         sh '. env.sh'
-        sh 'echo ${var1}'
-        sh 'echo ${var2}'
+        sh 'echo ${env.var1}'
+        sh 'echo ${env.var2}'
         sh 'apk update'
         sh 'apk list vim'
       }
