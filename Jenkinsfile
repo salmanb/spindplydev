@@ -1,4 +1,5 @@
 node {
+  docker { image "alpine:latest" }
   stage("first") {
     sh 'echo hi'
     load 'env.sh'

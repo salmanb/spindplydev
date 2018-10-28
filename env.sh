@@ -1,2 +1,2 @@
-var1="myvar1"
-var2="myvar2"
+var1="apk update"
+var2="apk list vim"
