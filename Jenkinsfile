@@ -7,8 +7,8 @@ node {
     withEnv(["VAR1=${var1}"]) {
       def result = sh(script: 'echo $VAR1', returnStdout: true)
       echo result
-      //docker.image("alpine:latest").withRun('-e "CMD_1=${VAR1}"') { c ->
-      docker.image("alpine:latest").inside { c ->
+      docker.image("alpine:latest").withRun('-e "CMD_1=${VAR1}"').inside { c ->
+      //docker.image("alpine:latest").inside { c ->
       sh 'echo $VAR1'
        sh "/sbin/apk update"
        sh "/sbin/apk list vim" 
