@@ -8,8 +8,9 @@ node {
       def result = sh(script: 'echo $VAR1', returnStdout: true)
       echo result
       docker.image("alpine:latest").withRun('-e "CMD_1=${VAR1}"') { c ->
-       sh "apk update"
-       sh "apk list vim" 
+        docker.image("alpine:latest")
+       sh "/sbin/apk update"
+       sh "/sbin/apk list vim" 
       }
     }
   }
