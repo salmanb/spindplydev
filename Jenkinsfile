@@ -2,19 +2,13 @@ pipeline {
   agent {
     docker { image "alpine:latest" }
   }
-  stages {
-    stage("first") {
-      steps {
-        load "env.sh"
-        withEnv(["VAR1=${var1}",
-             "VAR2=${var2}"
+  stage('build') {
+    def someGroovyVar = 'Hello world'
+    withEnv(['VAR1=VALUE ONE',
+             "VAR2=${someGroovyVar}"
             ]) {
         def result = sh(script: 'echo $VAR1; echo $VAR2', returnStdout: true)
         echo result
-    }
-        sh "apk update"
-        sh "apk list vim"
-      }
     }
   }
 }
