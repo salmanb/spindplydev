@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage("first") {
       steps {
-        sh ". env.sh"
+        load "env.sh"
         sh "env"
         sh "echo ${var1}"
         sh "echo ${var2}"
