@@ -14,7 +14,7 @@ node {
        sh "/sbin/apk list vim" 
       }
     }
-      build job: 'paramproj', parameters: [ string(name: 'VAR1', value: "${VAR1}") ]
+      build job: 'paramproj', parameters: [ string(name: 'VAR1', value: "$VAR1") ]
   }
 }
 /** pipeline {
