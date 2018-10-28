@@ -1,2 +1,2 @@
-var1="myvar1"
-var2="myvar2"
+export var1="myvar1"
+export var2="myvar2"
