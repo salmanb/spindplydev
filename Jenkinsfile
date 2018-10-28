@@ -6,6 +6,7 @@ pipeline {
     stage("first") {
       steps {
         sh ". env.sh"
+        sh "env"
         sh "echo ${var1}"
         sh "echo ${var2}"
         sh "apk update"
